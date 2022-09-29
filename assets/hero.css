@@ -1,3 +1,7 @@
+html{
+    overflow-x: hidden;
+}
+
 .hero{
     height: 80vh;
     position: relative;
@@ -9,8 +13,6 @@
 
     height: 80vh;
     width: 100%; */
-
-    position: fixed;
     top: 0%;
     left: 0;
     height: 160%;
@@ -22,7 +24,7 @@
     height: 80vh;
     width: 100%; */
 
-    position: absolute;
+    
     top: -5%;
     left: 0;
     width: 100%;
@@ -31,6 +33,7 @@
 
 
 .banner-img{
+    /* position: absolute; */
     height: 90vh;
     width: 100%;
     object-fit: cover;
@@ -38,14 +41,14 @@
  
 }
 
-.hero-content-position{
+/* .hero-content-position{
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     text-align: center;
     color: #fff;
-}
+} */
 
 /* .banner-overlay {
     z-index: 1;
@@ -56,4 +59,18 @@
     top: 0;
     left: 0;
     background-color: #2A6876;
+} */
+
+
+/* 
+.carousel-cell {
+  left: 0 !important;
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+  z-index: -1;
+}
+
+.carousel-cell.is-selected {
+  opacity: 1;
+  z-index: 0
 } */

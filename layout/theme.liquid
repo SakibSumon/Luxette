@@ -29,17 +29,17 @@
 
     {% render 'meta-tags' %}
 
-    {%- comment -%} <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.2/gsap.min.js" defer></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.2/ScrollTrigger.min.js" defer></script> {%- endcomment -%}
+
   <script src="{{ 'global.js' | asset_url }}" defer="defer"></script>
   <script src="{{ 'lazy.js' | asset_url }}" defer="defer"></script>
   <script src="{{ 'flickity.pkgd.min.js' | asset_url }}" defer="defer" ></script>
   <script src="{{ 'gsap.min.js' | asset_url }}" defer="defer" ></script>
-  {%- comment -%} <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.1/gsap.min.js" defer></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.1/ScrollTrigger.min.js" defer></script> {%- endcomment -%}
+    <!-- CSS -->
+<link rel="stylesheet" href="https://unpkg.com/flickity-fade@2/flickity-fade.css">
 
-  {%- comment -%} <script src"{{ 'https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.1/gsap.min.js' | asset_url }}"> </script>
-  <script src"{{ 'https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.1/ScrollTrigger.min.js' | asset_url }}"> </script> {%- endcomment -%}
+<!-- JS -->
+<script src="https://unpkg.com/flickity-fade@2/flickity-fade.js"></script>
+
   
     {{ content_for_header }}
 
