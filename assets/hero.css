@@ -105,6 +105,7 @@ html{
 .hero-title{
     height: 70px;
     opacity: 0;
+    display: block;
 }
 
 .hero-sub{
@@ -114,6 +115,7 @@ html{
 
 
 .hero-title h1{
+   
     font-size: 70px;
     color: white;
     line-height: 7.2rem;

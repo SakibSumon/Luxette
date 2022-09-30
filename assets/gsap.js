@@ -11,8 +11,6 @@
 
 
 gsap.registerPlugin(ScrollTrigger);
-
-
 // apply parallax effect to any element with a data-speed attribute
 gsap.utils.toArray("[data-speed]").forEach(el => {
   gsap.to(el, {
@@ -27,6 +25,33 @@ gsap.utils.toArray("[data-speed]").forEach(el => {
     }
   });
 });
+
+//hero text un-parallaxing
+gsap.to(".hero-content", 1,{
+  scrollTrigger: {
+    trigger: ".main-carousel",
+    start: "top 10%",
+    end: "bottom 0%",
+    scrub: true,
+    invalidateOnRefresh: true,
+    
+  },
+  y:-250
+})
+
+//hero btn un-parallaxing
+gsap.to(".hero-btn", 1,{
+  scrollTrigger: {
+    trigger: ".main-carousel",
+    start: "top 10%",
+    end: "bottom 0%",
+    scrub: true,
+    invalidateOnRefresh: true,
+    
+  },
+  y:-250
+})
+
 
 //text appear on hero section
 
@@ -127,15 +152,9 @@ document.addEventListener("DOMContentLoaded", function() {
 
 
 //hero btn appear
-// gsap.from(".hero-btn", 1,{
- 
-//   opacity: 0,
-
-
-// },
-// )
-
 gsap.to(".hero-btn", 1,{
   opacity:1,
   delay: 1.5,
 })
+
+
