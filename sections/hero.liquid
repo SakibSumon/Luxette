@@ -6,28 +6,33 @@
   <div class="main-carousel" data-speed=".35">
     {% for item in section.blocks %}
       <div class="carousel-cell" >
+        
         {% if item.settings.banner_img %}
-          {% render 'image',  imageSrc: item.settings.banner_img, classes: 'banner-img' %}
+          {% render 'image', imageSrc: item.settings.banner_img, classes: 'banner-img' %}
         {% else %}
           {{ 'lifestyle-1' | placeholder_svg_tag: 'banner-img' }}
         {% endif %}
-        {% comment %} <div class="hero-content hero-content-position " style="backface-visibility: hidden !important; ">
-          <h1>
-            {{ item.settings.hero_title }}
-          </h1>
-          <p>
-            {{ item.settings.hero_subtitle }}
-          </p>
-          <div class="hero-btn">
-            <a class="hero-btn1 btn-transparent btn-property" href=" {{ item.settings.id_btn1_url }} ">
-              {{ item.settings.btn1_text }}
-            </a>
-            <a class="hero-btn2 btn-fill btn-property " href=" {{ item.settings.id_btn2_url }}">
-              {{ item.settings.btn2_text }}
-            </a>
+           <div class="hero-content" data-speed="1">
+              <div class="hero-title">
+                <h1>{{ item.settings.hero_title }}</h1>
+              </div>
+
+               <div class="hero-sub" >
+                <p>{{ item.settings.hero_subtitle }}</p>
+              </div>
           </div>
-        </div> {% endcomment %}
-        <div class="banner-overlay">&nbsp;</div>
+           <div class="hero-btn">
+              <div class="shine"> 
+                  <a class="hero-btn1 btn-transparent btn-property" href=" {{ item.settings.id_btn1_url }} "> {{ item.settings.btn1_text }}
+                  </a>
+              </div>
+                
+              <div> 
+                <a class="hero-btn2 btn-fill btn-property btn-shine1 " href=" {{ item.settings.id_btn2_url }}">
+                  {{ item.settings.btn2_text }}
+                </a>
+              </div>
+            </div> 
       </div>
     {% endfor %}
   </div>
@@ -36,6 +41,7 @@
 <script src="{{ 'gsap.min.js' | asset_url }}" defer="defer" ></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.2/gsap.min.js" defer></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.2/ScrollTrigger.min.js" defer></script>
+
 
 
 <script src="{{ 'gsap.js' | asset_url }}" defer="defer" ></script>
@@ -60,14 +66,14 @@
                     "type": "text",
                     "id": "hero_title",
                     "label": "Hero Title",
-                    "default": "Make room for more friends, more family, more fun"
+                    "default": "Summer Vibes."
                 },
 
                 {
                     "type": "text",
                     "id": "hero_subtitle",
                     "label": "Hero Subtitle",
-                    "default": "Decorate your house as you see fit! With our grandiose collections of contemporary furniture and unique house décor we will help you make your household as comfortable as possible while."
+                    "default": "Decorate your house"
                 },
 
                 {

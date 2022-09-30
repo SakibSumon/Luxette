@@ -1,3 +1,17 @@
+@font-face {
+  font-family: 'Twentieth Century';
+  /* src: url('../twentieth/TwentiethCenturyforKenmoreBold.ttf');
+  src: url('../twentieth/TwentiethCenturyforKenmoreLight.ttf');
+  src: url('../twentieth/TwentiethCenturyforKenmoreMedium.ttf');
+  src: url('../twentieth/TwentiethCenturyforKenmoreSemibold.ttf'); */
+  src: url('../twentieth/TwentiethCenturyforKenmoreBold.ttf') format('truetype');
+}
+
+body p, body h1, body h2, body h3, body span{
+    font-family: 'Twentieth Century';
+}
+
+
 /* Color custom properties */
 
 :root,
@@ -2957,3 +2971,4 @@ details-disclosure > details {
     outline: transparent solid 1px;
   }
 }
+
