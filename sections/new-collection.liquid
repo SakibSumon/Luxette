@@ -1,0 +1,56 @@
+{{ "new-collection.css" | asset_url | stylesheet_tag }}
+{{ "custom-style.css" | asset_url | stylesheet_tag }}
+
+<section class="page-width new-collection mb-80 mt-80">
+    <div class="col-top">
+        <h1 class=""> Shop By Category</h1>
+    </div>
+    <ul class="new-col  mb-100 ">
+        {%- for collection in collections limit: 4 -%}
+            <div class="img-cont gsap"  > 
+                    <li class="ul-item" >            
+                    {%- if collection.image -%}
+                        {%- assign collection_image = collection.image -%}
+                    {%- elsif collection.products.first and collection.products.first.images != empty -%}
+                        {%- assign collection_image = collection.products.first.featured_image -%}
+                    {%- else -%}
+                        {%- assign collection_image = blank -%}
+                    {%- endif -%}
+                    <div class="img-hover-div">
+                        <a href="{{ collection.url }}">
+                        {% render 'image', imageSrc: collection_image, classes: 'col-img' %}
+                        </a> 
+                        {%- comment -%} <a href="{{ collection.url }}">  <p class="col-view-detail">View Details</p>  </a>  {%- endcomment -%}
+                         {%- comment -%} <p class="col-title">  {{ collection.title }}</p> {%- endcomment -%}
+                         <a class="col-title" href="{{ collection.url }}">
+                           {{ collection.title }}
+                         </a>
+                          <a href="{{ collection.url }}">   
+                            <div class="col-overlay">&nbsp;</div> </a>
+                    </div>
+                </li>
+            </div>
+        {%- endfor -%}
+    </ul>
+
+
+</section>
+
+{% schema %}
+{
+   "name": "New Collection List",
+  "settings": [
+ {
+    "type": "url",
+    "id": "col_url",
+    "label": "Collection URL",
+    "default": "/"
+ }
+  ], 
+ "presets": [
+    {
+        "name": "New Collection List"
+    }
+ ]
+}
+{% endschema %}
