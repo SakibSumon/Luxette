@@ -158,3 +158,96 @@ gsap.to(".hero-btn", 1,{
 })
 
 
+///gift card section
+
+//image appear of gift card section
+gsap.to(".gift-img", 1,{
+  scrollTrigger: {
+    trigger: ".gift-card",
+    start: "top 80%",
+    end: "bottom 0%",
+   
+    invalidateOnRefresh: true,
+    
+  },
+  opacity:1,
+  duration:1,
+  y:0
+})
+
+//gift title appear of gift card section
+ gsap.from(".gift-text", 1, {
+  scrollTrigger: {
+    trigger: ".gift-card",
+    start: "top 70%",
+    end: "bottom 0%",
+    invalidateOnRefresh: true,
+  },
+      y: 140,
+      ease: "ease",
+      delay: 0,
+      duration:.1,
+      skewY: 5,
+      opacity:0,
+     
+      stagger: {
+        amount: 0.3
+      },
+    })
+
+//gift text appear of gift card section
+
+ gsap.from(".gift-title", 1, {
+  scrollTrigger: {
+    trigger: ".gift-card",
+    start: "top 70%",
+    end: "bottom 0%",
+    invalidateOnRefresh: true,
+  },
+      y: 140,
+      ease: "ease",
+      delay: 0,
+      duration:.1,
+      skewY: 5,
+      opacity:0,
+     
+      stagger: {
+        amount: 0.3
+      },
+    })
+
+    //gift btn appear of gift card section
+    gsap.to(".gift-card-link",{
+       scrollTrigger: {
+        trigger: ".gift-card-link",
+        start: "top 100%",
+        end: "bottom 0%",
+       
+      },
+      opacity:1,
+      delay: .5,
+      ease: "ease-in-out",
+      stagger: {
+        amount: 0.3
+      },
+      
+    })
+
+    //batch anim on products
+
+  gsap.to(".gsap", {y:15})
+
+  ScrollTrigger.batch(".gsap", {
+    interval: .2, 
+    scrub: .5, 
+    top: "top 80%",
+
+    onEnter: batch => gsap.to(batch, {
+        duration: 2 ,
+        autoAlpha: 1.5, 
+        stagger: .1,
+        ease: Back.easeOut.config(2),
+        y: -0, 
+    
+   }),
+});

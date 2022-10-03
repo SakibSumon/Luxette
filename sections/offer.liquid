@@ -1,0 +1,102 @@
+{{ "offer.css" | asset_url | stylesheet_tag }}
+{{ "custom-style.css" | asset_url | stylesheet_tag }}
+
+
+<section class="page-width offer">
+    <div class="offer-left">
+     <div class="offer-cntnt offer-txt">
+        <div class="cc">
+            <span class="offer-txt-nrml">UP TO<br></span>
+            <span class="offer-perc">{{ section.settings.percentage1 }} <sup class="sup-perc">%</sup> <small class="sml-off">OFF<br></small> </span>
+            <span class="offer-txt-nrml">SELECTED PRODUCTS</span>
+        </div>
+     </div>
+     <div class="offer-cntnt">
+        <div>
+            {% if section.settings.offer_img1 %}
+                {% render 'image', imageSrc: section.settings.offer_img1, classes: 'banner-img' %}
+            {% else %}
+                {{ 'lifestyle-1' | placeholder_svg_tag: 'banner-img' }}
+            {% endif %}
+        </div>
+        <div>
+            {% if section.settings.offer_img2 %}
+                {% render 'image', imageSrc: section.settings.offer_img2, classes: 'banner-img' %}
+            {% else %}
+                {{ 'lifestyle-1' | placeholder_svg_tag: 'banner-img' }}
+            {% endif %}
+        </div>
+
+     </div>
+    </div>
+     <div class="offer-left">
+
+       <div class="offer-cntnt offer-txt">
+        <div class="cc">
+            <span class="offer-txt-nrml">UP TO<br></span>
+            <span class="offer-perc">{{ section.settings.percentage1 }} <sup class="sup-perc">%</sup> <small class="sml-off">OFF<br></small> </span>
+            <span class="offer-txt-nrml">SELECTED PRODUCTS</span>
+        </div>
+     </div>
+     <div class="offer-cntnt">
+        <div>
+            {% if section.settings.offer_img3 %}
+                {% render 'image', imageSrc: section.settings.offer_img3, classes: 'banner-img' %}
+            {% else %}
+                {{ 'lifestyle-1' | placeholder_svg_tag: 'banner-img' }}
+            {% endif %}
+        </div>
+        <div>
+            {% if section.settings.offer_img4 %}
+                {% render 'image', imageSrc: section.settings.offer_img4, classes: 'banner-img' %}
+            {% else %}
+                {{ 'lifestyle-1' | placeholder_svg_tag: 'banner-img' }}
+            {% endif %}
+        </div>
+
+     </div>
+    </div>
+</section>
+
+{% schema %}
+    {
+        "name": "Offer",
+        "settings": [
+
+            {
+                "type": "image_picker",
+                "id": "offer_img1",
+                "label": "Banner Image"
+            },
+             {
+                "type": "image_picker",
+                "id": "offer_img2",
+                "label": "Banner Image"
+            },
+             {
+                "type": "image_picker",
+                "id": "offer_img3",
+                "label": "Banner Image"
+            },
+             {
+                "type": "image_picker",
+                "id": "offer_img4",
+                "label": "Banner Image"
+            },
+            {
+                "type": "text",
+                "id": "percentage1",
+                "label": "Percentage"
+            }
+
+        ],
+
+        "presets": [
+            {
+                "name": "Offer"
+               
+            }
+            
+        ]
+    }
+{% endschema %}

@@ -6,3 +6,7 @@
 .mb-80{
     margin-bottom: 80px;
 }
+
+.gsap{
+    opacity: 0;
+}
