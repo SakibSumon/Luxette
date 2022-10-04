@@ -134,6 +134,29 @@
         "col_url": "\/"
       }
     },
+    "16648540489508027b": {
+      "type": "fall-acces",
+      "settings": {
+        "fall_image": "shopify:\/\/shop_images\/zeny-rosalina-Z3tc0Bfv0c4-unsplash_1512x_724dbea9-99fb-4a85-a4df-0ca518971a99.webp",
+        "fall_title": "FALL ACCESSORIES",
+        "fall_description": "Get the perfect look for your fall wardrobe.<br> From the city to the festival to campus.",
+        "fall_text": "FRESH LOOKS",
+        "button_text1": "SHOP BAGS",
+        "button_link1": "",
+        "button_text2": "SHOP ALL",
+        "button_link2": ""
+      }
+    },
+    "1664854123b96c889e": {
+      "type": "offer",
+      "settings": {
+        "offer_img1": "shopify:\/\/shop_images\/WTY518-Ivory-1_360x_1.webp",
+        "offer_img2": "shopify:\/\/shop_images\/WDY277-Heather-Gray-1_360x_9a7079e9-8a64-49b1-b5c1-8c390c48f4ed.webp",
+        "offer_img3": "shopify:\/\/shop_images\/WDY538-Chelsea-Gray-1_360x_f136ae14-a302-4164-9b72-f824fb4ed6f6.webp",
+        "offer_img4": "shopify:\/\/shop_images\/T185143-Heather-1_360x_8326a5cc-e745-41de-b04f-5c47217cc7fc.webp",
+        "percentage1": ""
+      }
+    },
     "featured_collection": {
       "type": "featured-collection",
       "settings": {
@@ -273,6 +296,8 @@
     "rich_text",
     "16647800911d6f4e6a",
     "16647801970e4d01d7",
+    "16648540489508027b",
+    "1664854123b96c889e",
     "featured_collection",
     "collage",
     "video",
