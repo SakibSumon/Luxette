@@ -1,0 +1,43 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400&display=swap');
+
+.card__inner{
+    height: 460px !important;
+}
+
+.product-card__image{
+    object-fit: contain;
+}
+
+.full-unstyled-link{
+    font-family: 'Montserrat', sans-serif;
+    font-size: 18px;
+    font-weight: 400;
+    text-align: center;
+    letter-spacing: 2px;
+}
+
+.card-information span{
+    font-family: 'Montserrat', sans-serif;
+    text-align: center;
+
+}
+
+.price{
+    text-align: center;
+}
+
+@media screen and (max-width: 480px){
+    .full-unstyled-link{
+        font-size: 14px;
+    }
+
+    .card-information span{
+        font-size: 14px;
+
+    }
+
+    .card__inner{
+        height: 260px !important;
+
+    }
+}

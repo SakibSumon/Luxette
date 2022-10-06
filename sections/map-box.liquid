@@ -1,0 +1,56 @@
+{{ "map-box.css" | asset_url | stylesheet_tag }}
+{{ "custom-style.css" | asset_url | stylesheet_tag }}
+
+<section class="map-box">
+    <div class="mapouter">
+        <div class="gmap_canvas">
+            <iframe class="map-frame" width="100%" height="700" id="gmap_canvas" src="https://maps.google.com/maps?q=2880%20Broadway,%20New%20York&t=&z=13&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0">
+            </iframe>
+            <a href="https://123movies-to.org">123movies</a><br>
+                <style>
+                    .mapouter{position:relative;text-align:right;height:700px;width:100%;}
+                </style>
+            <a href="https://www.embedgooglemap.net">google maps html widget</a>
+                <style>
+                    .gmap_canvas {overflow:hidden;background:none!important;height:700px;width:100%;}
+                </style>
+        </div>
+    </div>
+</section>
+
+{% schema %}
+    {
+        "name": "Map Box",
+        "settings": [
+            {
+                "type": "text",
+                "id": "map_box_title",
+                "label": "Title",
+                "default": "Map Box"
+            },
+            {
+                "type": "text",
+                "id": "map_box_description",
+                "label": "Description",
+                "default": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+            },
+            {
+                "type": "text",
+                "id": "map_box_button_text",
+                "label": "Button Text",
+                "default": "Button"
+            },
+            {
+                "type": "text",
+                "id": "map_box_button_link",
+                "label": "Button Link",
+                "default": "#"
+            }
+        ],
+        "presets": [
+            {
+                "name": "Map Box"
+            }
+        ]
+    }
+{% endschema %}

@@ -1,0 +1,69 @@
+{{ "parallax-section.css" | asset_url | stylesheet_tag }}
+{{ "custom-style.css" | asset_url | stylesheet_tag }}
+
+
+<section class="parlx">
+       <div class="par-imgArea" data-speed=".1">
+            {% if section.settings.par_img %}
+                 {% render 'image', imageSrc: section.settings.par_img, classes: 'par-img' %}
+            {% else %}
+                {{ 'lifestyle-1' | placeholder_svg_tag: 'par-img' }}
+            {% endif %}
+       </div>
+
+        <div class="par-height">
+             <div class="par-contentArea">
+                <div class="par-content">
+                    <h2 class="par-title">{{ section.settings.par_title }}</h2>
+                    <p class="par-text">{{ section.settings.par_text }}</p>
+                    <a href="{{ section.settings.par_link }}" class="par-link">{{ section.settings.par_link_text }}</a>
+                </div>
+        </div>
+        </div>
+
+</section>
+
+
+
+{% schema %}
+    {
+        "name": "Parallax Section",
+        "settings": [
+            {
+                "type": "image_picker",
+                "id": "par_img",
+                "label": "Parallax Image"
+            },
+            {
+                "type": "text",
+                "id": "par_title",
+                "label": "Title",
+                "default": "BOUTIQUE STYLE"
+            },
+            {
+                "type": "text",
+                "id": "par_text",
+                "label": "Text",
+                "default": "Fierce elegance is about authenticity, refinement, beauty and grace. It’s a powerful lady like class with a touch of sophisticated sass that creates a sleek and commanding presence."
+            },
+            {
+                "type": "text",
+                "id": "par_link",
+                "label": "Link",
+                "default": "#"
+            },
+            {
+                "type": "text",
+                "id": "par_link_text",
+                "label": "Link Text",
+                "default": "Read More"
+            }
+        ],  
+        "presets": [
+            {
+                "name": "Parallax Section"
+            }
+        ]
+    }
+
+{% endschema %}

@@ -1,0 +1,79 @@
+.fall-acces{
+    height: 600px;
+    position: relative;
+}
+
+.fall-img{
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+
+}
+
+.fall-acces__content{
+    z-index: 12;
+    position: absolute;
+    top: 50%;
+    right: 3%;
+    text-align: right;
+    transform: translate(0, -50%);
+
+}
+
+.fall-txt{
+    color: #fff;
+    font-weight: 400;
+    margin: 14px 0;
+}
+
+.fall-acces__text{
+    font-size: 18px;
+    letter-spacing: 3px;
+    line-height: 2.6rem;
+}
+
+.fall-acces__title{
+    font-size: 50px;
+    letter-spacing: 6px;
+
+}
+
+.fall-overlay{
+    z-index: 1;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.3);
+}
+
+.fall-btn{
+    background-color: #9d1339;
+    font-size: 14px;
+    padding: 10px 20px;
+
+    letter-spacing: 3px;
+}
+
+@media screen and (max-width: 768px){
+    .fall-acces{
+        margin-top: 200px !important;
+
+    }
+
+}
+
+@media screen and (max-width: 480px){
+    .fall-acces__title{
+        font-size: 28px;
+    }
+
+    .fall-acces__text {
+        font-size: 14px;
+    }
+
+}

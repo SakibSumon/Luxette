@@ -1,0 +1,122 @@
+{{ "blog-posts.css" | asset_url | stylesheet_tag }}
+{{ "custom-style.css" | asset_url | stylesheet_tag }}
+{% assign mainBlog = blogs[section.settings.blog_item] %}
+{% assign Featureblogs = blogs[section.settings.blog_item].articles %}
+
+
+<section class="bgpst page-width element-margin-top mt-80 mb-80 ">
+  <div class="blog-top ">
+    <div class="blog-top-left">
+        <h1 class="blg-title">{{ section.settings.blog_title }}</h1>
+        <p class="blg-sub">{{ section.settings.blog_subtitle }}</p>
+    </div>
+    <div class="blog-top-right">
+         <a class="blg-btn mt-15 btn-transparent btn-property" href="{{ section.settings.blog_btn_url }}">  {{ section.settings.blog_btn_text }}   </a>
+    </div>
+  </div>
+  <div class="blog-grid">
+        {% for blog in Featureblogs limit: 3 %}
+            <div class="blog-imgArea gsap">
+                <div class="blog-img-box">
+                    {% if blog.image %}
+                        <a href="{{blog.url }}"> {% render 'image', imageSrc: blog.image | img_url: , classes: 'blog-img' loading="lazy" %} </a> 
+                    {% else %}
+                         {{ 'image' | placeholder_svg_tag: 'blog-img' }}
+                    {% endif %}
+                </div>
+                {%- comment -%} <div class="blog-tag-div">  <a class="blog-tag"  href="{{ mainBlog.url }}/tagged/{{ blog.tags[0] | handle }}">{{ blog.tags[0] }}</a>
+                </div> {%- endcomment -%}
+
+                <div class="blog-author-date">
+                    {%- comment -%} <p class="author-name">{{ blog.author }}</p> {%- endcomment -%}
+                    <p class="blog-text blog-date">{{ blog.published_at | time_tag: format: 'date' }} </p>
+                </div>
+
+                <div class="blog-title-link"> 
+                    <a class="blog-plain-title" href="{{blog.url }}"> <p class="blog-title">{{ blog.title | strip_html | truncatewords: 6 }} </p> </a>  
+                    <a class="blog-url" href="{{blog.url }}" ><span class="blog-arrow"> {{ 'arrow-icon.svg' | asset_url | img_tag }} </span></a>
+                </div>
+                {%- comment -%} <p class="blog-excerpt">  
+                    {%- if blog.excerpt.size > 0 -%}
+                        {{ blog.excerpt | strip_html | truncatewords: 15 }}
+                    {%- else -%}
+                        {{ blog.content | strip_html | truncatewords: 15 }}
+                    {%- endif -%}
+                </p> {%- endcomment -%}
+                
+            </div>    
+        {% endfor %}
+    </div>
+</section>
+
+
+{% schema %}
+{
+  "name": "Blog Post",
+  "settings": [
+        {
+            "type": "blog",
+            "id": "blog_item",
+            "label": "blog Item"
+        },
+
+       {
+            "type": "text",
+            "id": "blog_title",
+            "label": " Blog Title",
+            "default": "Latest Blog Post"
+       },
+
+      {
+            "type": "text",
+            "id": "blog_subtitle",
+            "label": " Blog Subtitle",
+            "default": "Tool and strategies modern teams need to help their companies grow."
+      },
+
+     {
+            "type": "url",
+            "id": "blog_btn_url",
+            "label": "  Blog Button Url",
+            "default": "/"
+     },
+
+    {
+            "type": "text",
+            "id": "blog_btn_text",
+            "label": "  Blog Button Text",
+            "default": "View All Post"
+    },
+        {
+            "type": "checkbox",
+            "id": "show_date",
+            "default": true,
+            "label": "t:sections.featured-blog.settings.show_date.label"
+       },
+        {
+            "type": "checkbox",
+            "id": "show_author",
+            "default": false,
+            "label": "t:sections.featured-blog.settings.show_author.label"
+        },
+
+        {
+            "type": "checkbox",
+            "id": "show_image",
+            "default": true,
+            "label": "t:sections.featured-blog.settings.show_image.label",
+            "info": "t:sections.featured-blog.settings.show_image.info"
+        }
+    ],
+
+"presets": [
+    {
+      
+        "name":"New Blog Posts",
+         "settings": {
+            "blog_item": "News"
+      }
+    }
+]
+}
+{% endschema %}

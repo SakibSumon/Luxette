@@ -1,0 +1,104 @@
+{{ "gift-card.css" | asset_url | stylesheet_tag }}
+{{ "custom-style.css" | asset_url | stylesheet_tag }}
+
+<section class="gift-card mt-80">
+    
+    <div class="gift-card-left gift-container gift-border">
+         {% render 'image', imageSrc: section.settings.gift_img_1, classes: 'gift-img' %}
+      
+            <div class="gift-card-content">
+                <p class="gift-card-text gift-text">{{ section.settings.gift_text_1 }}</p>
+                <h2 class="gift-card-title gift-title ">{{ section.settings.gift_title_1 }}</h2>
+               <div class="gift-crd-btn">
+                     <a href="{{ section.settings.gift_link_1 }}" class="gift-card-link btn-transparent btn-property">{{ section.settings.gift_link_text_1 }}</a>
+                    <a href="{{ section.settings.gift_link_1 }}" class="gift-card-link btn-transparent btn-property">{{ section.settings.gift_link_text_1 }}</a>
+               </div>
+            </div> 
+    </div>
+    <div class="gift-card-left  gift-container">
+        {% render 'image', imageSrc: section.settings.gift_img_2, classes: 'gift-img' %}
+
+        <div class="gift-card-right">
+             <h2 class="gift-card-title gift-title ">{{ section.settings.gift_title_2 }}</h2>
+             <p class="gift-card-text gift-text">{{ section.settings.gift_text_2 }}</p>
+            <a href="{{ section.settings.gift_link_2 }}" class="gift-card-link btn-transparent btn-property">{{ section.settings.gift_link_text_2 }}</a>
+            {%- comment -%} <a href="{{ section.settings.gift_link_2 }}" class="gift-card-link btn-transparent btn-property">{{ section.settings.gift_link_text_2 }}</a> {%- endcomment -%}
+        </div>
+    </div>
+</section>
+
+
+
+{% schema %}
+    {
+    "name": "Gift Card",
+        "settings": [
+            {
+                "type": "image_picker",
+                "id": "gift_img_1",
+                "label": "choose Image"
+            }
+            , 
+            {
+                "type": "image_picker",
+                "id": "gift_img_2",
+                "label": "choose Image"
+            }
+
+            , 
+            {
+                "type": "text",
+                "id": "gift_text_1",
+                "label": "Text 1"
+            }
+            , 
+            {
+                "type": "text",
+                "id": "gift_text_2",
+                "label": "Text 2"
+            }
+            , 
+            {
+                "type": "text",
+                "id": "gift_title_1",
+                "label": "Title 1"
+            }
+            ,
+            {
+                "type": "text",
+                "id": "gift_title_2",
+                "label": "Title 2"
+            }, 
+            {
+                "type": "url",
+                "id": "gift_link_1",
+                "label": "Link"
+            }
+            
+            , 
+            {
+                "type": "text",
+                "id": "gift_link_text_1",
+                "label": "Link Text"
+            },
+            {
+                "type": "url",
+                "id": "gift_link_2",
+                "label": "Link  "
+            },
+            {
+                "type": "text",
+                "id": "gift_link_text_2",
+                "label": "Link Text"
+            }
+
+
+        ],
+        "presets": [
+            {
+                "name": "Gift Card"
+            }
+        ]
+        
+    }
+{% endschema %}

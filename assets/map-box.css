@@ -1,0 +1,44 @@
+.map-box{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background: #000;
+    overflow: hidden;
+}
+
+.mapouter{
+    position: relative;
+  
+    height: 100%;
+    width: 100%;
+    background: #000;
+}
+
+.gmap_canvas{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transform: scale(1.1);
+    opacity: 0;
+
+}
+
+
+@media screen and (max-width: 480px){
+    .map-frame{
+        height: 50vh;
+    }
+
+    .gmap_canvas{
+        height: 50vh;
+    }
+    .map-box{
+        height: 50vh;
+    }
+
+    .mapouter{
+        height: 50vh;
+    }
+}

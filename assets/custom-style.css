@@ -1,0 +1,15 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400&display=swap');
+
+.mt-80{
+    margin-top: 80px;
+
+}
+
+.mb-80{
+    margin-bottom: 80px;
+}
+
+.gsap{
+    opacity: 0;
+}
+

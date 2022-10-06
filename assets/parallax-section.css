@@ -1,0 +1,78 @@
+.parlx{
+    height: 80vh;
+    position: relative;
+    overflow: hidden;
+    background-color: rgb(18, 18, 18);
+}
+
+.par-imgArea{
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+}
+
+.par-img{
+    opacity: 0;
+    scale: 1.15;
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+
+}
+
+.par-height{
+    position: absolute;
+    top: 5%;
+    left: 5%;
+    height: 310px;
+    width: 34%;
+    overflow: hidden;
+}
+.par-contentArea{
+    background-color: white;
+    opacity: 0;
+    transform: translateY(160px);
+}
+
+ .par-content h2, .par-content p, .par-content h1, .par-content a{
+    font-family: 'Montserrat', sans-serif;
+ }
+
+ .par-content{
+    padding: 16px;
+ }
+
+ .par-title{
+    font-size: 28px;
+    margin: 14px 0;
+ }
+
+ .par-text{
+    line-height: 2.5rem;
+    font-weight: 400;
+    font-size: 18px;
+ }
+
+
+ @media screen and (max-width: 480px){
+
+    .parlx {
+        height: 60vh;
+    }
+
+    .par-height{
+        width: 74%;
+    }
+
+    .par-text {
+        line-height: 2.1rem;
+        font-size: 16px;
+    }
+
+    .par-title {
+        font-size: 22px;
+    }
+
+ }
