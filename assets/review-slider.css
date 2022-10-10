@@ -1,0 +1,45 @@
+
+
+body { font-family: sans-serif; }
+
+.carousell {
+  background: #FAFAFA;
+  height: 50vh;
+  width: 100%;
+}
+
+.carousel-celll {
+  width: 66%;
+  height: 50vh;
+  margin-right: 10px;
+  /* background: #8C8; */
+  border-radius: 5px;
+  counter-increment: carousel-cell;
+
+  position: relative;
+ 
+}
+
+/* cell number */
+.carousel-celll:before {
+  /* display: block;
+  text-align: center;
+  content: counter(carousel-cell);
+  line-height: 200px;
+  font-size: 80px;
+  color: white; */
+}
+
+.review-img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+     transform: scale(.8);
+    transition: all 0.5s ease;
+    
+}
+
+.carousel-celll.is-selected .review-img
+{
+    transform: scale(1);
+}
