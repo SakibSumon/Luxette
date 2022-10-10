@@ -32,10 +32,11 @@
 
   <script src="{{ 'global.js' | asset_url }}" defer="defer"></script>
   <script src="{{ 'lazy.js' | asset_url }}" defer="defer"></script>
-  <script src="{{ 'flickity.pkgd.min.js' | asset_url }}" defer="defer" ></script>
-  {%- comment -%} <script src="{{ 'flickity-fade.js' | asset_url }}" defer="defer" ></script>
-  <script src="{{ 'flickity-fade.css' | asset_url }}" defer="defer"></script> {%- endcomment -%}
-  {{ "flickity-fade.css" | asset_url | stylesheet_tag }}
+  {%- comment -%} <script src="{{ 'flickity.pkgd.min.js' | asset_url }}" defer="defer" ></script> {%- endcomment -%}
+  
+  {%- comment -%} {{ "flickity-fade.css" | asset_url | stylesheet_tag }} {%- endcomment -%}
+  <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
+  <link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
   <script src="{{ 'gsap.min.js' | asset_url }}" defer="defer" ></script>
 
   

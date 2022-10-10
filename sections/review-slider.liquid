@@ -1,0 +1,83 @@
+{{ "review-slider.css" | asset_url | stylesheet_tag }}
+{{ "custom-style.css" | asset_url | stylesheet_tag }}
+
+
+
+<div class="carousell"
+  data-flickity='{ "freeScroll": true, "wrapAround": true }'>
+    <div class="carousel-celll">
+        {% if section.settings.review_img %}
+          {% render 'image', imageSrc: section.settings.review_img, classes: 'review-img' %}
+        {% else %}
+          {{ 'lifestyle-1' | placeholder_svg_tag: 'review-img' }}
+        {% endif %}
+    </div>
+    <div class="carousel-celll">
+         {% if section.settings.review_img %}
+          {% render 'image', imageSrc: section.settings.review_img, classes: 'review-img' %}
+        {% else %}
+          {{ 'lifestyle-1' | placeholder_svg_tag: 'review-img' }}
+        {% endif %}
+    </div>
+    <div class="carousel-celll">
+         {% if section.settings.review_img %}
+          {% render 'image', imageSrc: section.settings.review_img, classes: 'review-img' %}
+        {% else %}
+          {{ 'lifestyle-1' | placeholder_svg_tag: 'review-img' }}
+        {% endif %}
+    </div>
+   
+    
+</div>
+
+
+
+
+
+{% schema %}
+    {
+        "name": "Review Slider",
+        "settings": [
+            {
+            "type": "header",
+            "content": "Review Slider"
+            },
+            
+            {
+                "type": "image_picker",
+                "id": "review_img",
+                "label": "Banner Image"
+            },
+            {
+            "type": "text",
+            "id": "title",
+            "label": "Title",
+            "default": "What our customers say"
+            },
+            {
+            "type": "text",
+            "id": "subtitle",
+            "label": "Subtitle",
+            "default": "We are proud of our customers and the work we do for them."
+            },
+            {
+            "type": "text",
+            "id": "button_text",
+            "label": "Button Text",
+            "default": "Read More"
+            },
+            {
+            "type": "text",
+            "id": "button_link",
+            "label": "Button Link",
+            "default": "#"
+            }
+        ],
+
+        "presets": [
+            {
+            "name": "Review Slider"
+            }
+        ]
+    }
+{% endschema %}
